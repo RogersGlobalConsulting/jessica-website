@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rogers Global Consulting – Gift cards and vouchers</title>
+<meta name="description" content="Digital gift cards and vouchers delivered by email.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#EEF1F8;--ink:#171B3A;--cobalt:#2A3CE0;--mint:#BFF0D4;--sun:#FFD66B;--rose:#FFC7D1;--sky:#C5D5FF;--lilac:#DCCBFF;--peach:#FFD9B8;
+--head:"Bricolage Grotesque","Trebuchet MS",sans-serif;--body:"Figtree","Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);line-height:1.1;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;max-width:14ch}
+h2{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:800}
+h3{font-size:1.25rem;font-weight:600}
+p{max-width:62ch}
+
+header{position:sticky;top:0;z-index:5;background:rgba(238,241,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(23,27,58,.12)}
+header .wrap{display:flex;align-items:center;gap:20px;min-height:64px}
+.logo{font:800 1.3rem var(--head);text-decoration:none;margin-right:auto}
+nav{display:flex;gap:20px;font-weight:600;font-size:.95rem}
+nav a{text-decoration:none}
+nav a:hover{color:var(--cobalt)}
+select{font:600 .95rem var(--body);color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:8px;padding:6px 10px;cursor:pointer}
+
+.btn{display:inline-block;font:600 1rem var(--body);text-decoration:none;background:var(--cobalt);color:#fff;padding:13px 22px;border-radius:10px;border:2px solid var(--cobalt);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.sm{padding:8px 14px;font-size:.9rem}
+
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.hero p{margin:22px 0 30px;font-size:1.2rem}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.stack{position:relative;height:340px}
+.stack .ticket{position:absolute;width:260px;min-height:150px}
+.stack .ticket:nth-child(1){top:0;left:0;transform:rotate(-6deg)}
+.stack .ticket:nth-child(2){top:90px;left:110px;transform:rotate(4deg)}
+.stack .ticket:nth-child(3){top:190px;left:20px;transform:rotate(-2deg)}
+.stack .amt{font:800 2.4rem var(--head)}
+
+/* ticket shape: notches sit on the dashed line */
+.ticket{--b:66px;background:var(--bg,var(--mint));border-radius:16px;display:flex;flex-direction:column;
+-webkit-mask:radial-gradient(circle 11px at 0 calc(100% - var(--b)),#0000 97%,#000) left/51% 100% no-repeat,radial-gradient(circle 11px at 100% calc(100% - var(--b)),#0000 97%,#000) right/51% 100% no-repeat;
+mask:radial-gradient(circle 11px at 0 calc(100% - var(--b)),#0000 97%,#000) left/51% 100% no-repeat,radial-gradient(circle 11px at 100% calc(100% - var(--b)),#0000 97%,#000) right/51% 100% no-repeat}
+.ticket .top{padding:20px 20px 14px;flex:1}
+.ticket .bot{height:var(--b);display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-top:2px dashed rgba(23,27,58,.35)}
+.ticket .top p{font-size:.95rem;margin-top:6px}
+.price{font-weight:600}
+
+section{padding:72px 0}
+.sec-head{margin-bottom:36px}
+.sec-head p{margin-top:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;list-style:none;padding:0;counter-reset:s}
+.steps li{counter-increment:s;border-top:4px solid var(--ink);padding-top:16px}
+.steps li::before{content:counter(s);font:800 2rem var(--head);color:var(--cobalt)}
+.steps p{margin-top:6px}
+
+.band{background:var(--ink);color:#fff}
+.band .btn{background:var(--sun);border-color:var(--sun);color:var(--ink)}
+.band .btn.alt{background:transparent;color:#fff;border-color:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.soon{display:inline-block;background:var(--sun);color:var(--ink);font-weight:600;font-size:.9rem;padding:3px 12px;border-radius:99px;margin-bottom:14px}
+.band p{margin:14px 0 24px;color:#DDE1F5}
+
+footer{padding:36px 0;border-top:1px solid rgba(23,27,58,.15);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer nav{font-weight:400}
+
+@media(max-width:820px){
+ nav{display:none}
+ .hero .wrap,.two,.steps{grid-template-columns:1fr}
+ .stack{height:380px;max-width:340px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <a class="logo" href="#top">Rogers Global Consulting</a>
+  <nav aria-label="Main">
+   <a href="#cards" data-i18n="nav_cards"></a>
+   <a href="#how" data-i18n="nav_how"></a>
+   <a href="#exchange" data-i18n="nav_fx"></a>
+   <a href="#business" data-i18n="nav_biz"></a>
+   <a href="#contact" data-i18n="nav_contact"></a>
+  </nav>
+  <select id="lang" aria-label="Language / Langue">
+   <option value="en">English</option>
+   <option value="fr">Français</option>
+  </select>
+ </div>
+</header>
+
+<main id="top">
+ <div class="hero"><div class="wrap">
+  <div>
+   <h1 data-i18n="hero_title"></h1>
+   <p data-i18n="hero_sub"></p>
+   <div class="actions">
+    <a class="btn" href="#cards" data-i18n="hero_cta"></a>
+    <a class="btn alt" href="#business" data-i18n="hero_cta2"></a>
+   </div>
+  </div>
+  <div class="stack" aria-hidden="true">
+   <div class="ticket" style="--bg:var(--sun)"><div class="top"><h3 data-i18n="c_shop"></h3></div><div class="bot"><span class="amt">€50</span></div></div>
+   <div class="ticket" style="--bg:var(--sky)"><div class="top"><h3 data-i18n="c_stream"></h3></div><div class="bot"><span class="amt">€25</span></div></div>
+   <div class="ticket" style="--bg:var(--mint)"><div class="top"><h3 data-i18n="c_game"></h3></div><div class="bot"><span class="amt">€100</span></div></div>
+  </div>
+ </div></div>
+
+ <section id="cards"><div class="wrap">
+  <div class="sec-head">
+   <h2 data-i18n="cards_title"></h2>
+   <p data-i18n="cards_sub"></p>
+  </div>
+  <div class="grid" id="catalog"></div>
+ </div></section>
+
+ <section id="how"><div class="wrap">
+  <div class="sec-head"><h2 data-i18n="how_title"></h2></div>
+  <ol class="steps">
+   <li><h3 data-i18n="s1_t"></h3><p data-i18n="s1_p"></p></li>
+   <li><h3 data-i18n="s2_t"></h3><p data-i18n="s2_p"></p></li>
+   <li><h3 data-i18n="s3_t"></h3><p data-i18n="s3_p"></p></li>
+  </ol>
+ </div></section>
+
+ <section id="exchange" class="band"><div class="wrap two">
+  <div id="fx">
+   <span class="soon" data-i18n="soon"></span>
+   <h2 data-i18n="fx_title"></h2>
+   <p data-i18n="fx_text"></p>
+   <a class="btn" href="mailto:contact@yourbrand.fr?subject=Currency%20exchange" data-i18n="fx_btn"></a>
+  </div>
+  <div id="business">
+   <h2 data-i18n="biz_title"></h2>
+   <p data-i18n="biz_text"></p>
+   <a class="btn alt" href="mailto:contact@yourbrand.fr?subject=API%20access" data-i18n="biz_btn"></a>
+  </div>
+ </div></section>
+
+ <section id="contact"><div class="wrap">
+  <h2 data-i18n="contact_title"></h2>
+  <p style="margin:12px 0 22px" data-i18n="contact_text"></p>
+  <a class="btn" href="mailto:contact@yourbrand.fr">contact@yourbrand.fr</a>
+ </div></section>
+</main>
+
+<footer><div class="wrap">
+ <span>© <span id="yr"></span> Rogers Global Consulting</span>
+ <!-- TODO: add your company name, legal form, SIRET and address in the legal notice page (required in France). -->
+ <nav aria-label="Legal">
+  <a href="#" data-i18n="f_legal"></a>
+  <a href="#" data-i18n="f_terms"></a>
+  <a href="#" data-i18n="f_privacy"></a>
+ </nav>
+</div></footer>
+
+<script>
+/* To add a language: add an entry in T, then an <option> in the #lang select. */
+const T={
+en:{title:"Rogers Global Consulting – Gift cards and vouchers",
+nav_cards:"Gift cards",nav_how:"How it works",nav_fx:"Currency exchange",nav_biz:"For stores",nav_contact:"Contact",
+hero_title:"Gift cards and vouchers, delivered in minutes.",
+hero_sub:"Buy digital gift cards for the brands you use every day. Pay securely and receive your code by email.",
+hero_cta:"Browse gift cards",hero_cta2:"For stores",
+cards_title:"Choose a gift card",cards_sub:"Categories and amounts below are examples. Your real catalog will appear here.",
+c_shop:"Shopping",c_stream:"Streaming and music",c_game:"Gaming",c_food:"Food and delivery",c_travel:"Travel",c_mobile:"Mobile top-up",
+d_shop:"Fashion, home and electronics.",d_stream:"Films, series and music.",d_game:"Games, consoles and add-ons.",d_food:"Restaurants and home delivery.",d_travel:"Flights, hotels and rentals.",d_mobile:"Credit for prepaid phones.",
+from:"From",req:"Request",
+how_title:"How it works",
+s1_t:"Pick a card",s1_p:"Choose a category and an amount.",
+s2_t:"Pay securely",s2_p:"Pay online with your usual payment method.",
+s3_t:"Receive your code",s3_p:"We email your code. Use it in store or online.",
+soon:"Coming soon",fx_title:"Currency exchange",fx_text:"We are preparing a currency exchange service. Write to us to hear when it opens.",fx_btn:"Notify me",
+biz_title:"Sell our cards in your store",biz_text:"Connect your Shopify, WordPress or other online store to our catalog through an API, and earn a commission on every sale.",biz_btn:"Request API access",
+contact_title:"Contact us",contact_text:"Questions about an order, a partnership or the API? Write to us.",
+f_legal:"Legal notice",f_terms:"Terms of sale",f_privacy:"Privacy"},
+fr:{title:"Rogers Global Consulting – Cartes cadeaux et bons d’achat",
+nav_cards:"Cartes cadeaux",nav_how:"Comment ça marche",nav_fx:"Change de devises",nav_biz:"Pour les boutiques",nav_contact:"Contact",
+hero_title:"Cartes cadeaux et bons d’achat, livrés en quelques minutes.",
+hero_sub:"Achetez des cartes cadeaux numériques pour les enseignes que vous utilisez au quotidien. Payez en toute sécurité et recevez votre code par e-mail.",
+hero_cta:"Voir les cartes cadeaux",hero_cta2:"Pour les boutiques",
+cards_title:"Choisissez une carte cadeau",cards_sub:"Les catégories et montants ci-dessous sont des exemples. Votre vrai catalogue apparaîtra ici.",
+c_shop:"Shopping",c_stream:"Streaming et musique",c_game:"Jeux vidéo",c_food:"Restauration et livraison",c_travel:"Voyages",c_mobile:"Recharge mobile",
+d_shop:"Mode, maison et électronique.",d_stream:"Films, séries et musique.",d_game:"Jeux, consoles et extensions.",d_food:"Restaurants et livraison à domicile.",d_travel:"Vols, hôtels et locations.",d_mobile:"Crédit pour mobiles prépayés.",
+from:"Dès",req:"Demander",
+how_title:"Comment ça marche",
+s1_t:"Choisissez une carte",s1_p:"Sélectionnez une catégorie et un montant.",
+s2_t:"Payez en sécurité",s2_p:"Réglez en ligne avec votre moyen de paiement habituel.",
+s3_t:"Recevez votre code",s3_p:"Nous vous envoyons le code par e-mail. Utilisez-le en magasin ou en ligne.",
+soon:"Bientôt disponible",fx_title:"Change de devises",fx_text:"Nous préparons un service de change de devises. Écrivez-nous pour savoir quand il ouvrira.",fx_btn:"Me prévenir",
+biz_title:"Vendez nos cartes dans votre boutique",biz_text:"Connectez votre boutique Shopify, WordPress ou autre à notre catalogue via une API, et gagnez une commission sur chaque vente.",biz_btn:"Demander l’accès à l’API",
+contact_title:"Contactez-nous",contact_text:"Une question sur une commande, un partenariat ou l’API ? Écrivez-nous.",
+f_legal:"Mentions légales",f_terms:"Conditions générales de vente",f_privacy:"Confidentialité"}
+};
+const CATS=[["shop","--sun"],["stream","--sky"],["game","--mint"],["food","--rose"],["travel","--lilac"],["mobile","--peach"]];
+const cat=document.getElementById("catalog");
+cat.innerHTML=CATS.map(([k,c])=>`<div class="ticket" style="--bg:var(${c})"><div class="top"><h3 data-i18n="c_${k}"></h3><p data-i18n="d_${k}"></p></div><div class="bot"><span class="price"><span data-i18n="from"></span> €10</span><a class="btn sm" href="#contact" data-i18n="req"></a></div></div>`).join("");
+
+const sel=document.getElementById("lang");
+function setLang(l){
+ if(!T[l])l="en";
+ document.documentElement.lang=l;sel.value=l;document.title=T[l].title;
+ document.querySelectorAll("[data-i18n]").forEach(e=>{e.textContent=T[l][e.dataset.i18n]});
+ try{localStorage.setItem("lang",l)}catch(e){}
+}
+let start;try{start=localStorage.getItem("lang")}catch(e){}
+start=start||(navigator.language||"en").slice(0,2);
+setLang(start);
+sel.addEventListener("change",()=>setLang(sel.value));
+document.getElementById("yr").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
